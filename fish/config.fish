@@ -2,6 +2,8 @@
 set -g __fish_hg_prompt_color "blue"
 set -g __fish_hg_prompt_color_status $fish_color_host
 set -g __fish_virtualenv_prompt_color "blue"
+set -g __fish_git_prompt_showdirtystate "yes"
+set -g __fish_git_prompt_showuntrackedfiles "yes"
 
 # disable the virtual_env override prompt
 set -g VIRTUAL_ENV_DISABLE_PROMPT "true"
