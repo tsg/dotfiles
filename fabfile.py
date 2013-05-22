@@ -21,10 +21,28 @@ def save_fish():
 
 
 @task
+def deploy_git():
+    """
+    Deploys fish shell configuration.
+    """
+    local("cp git/gitconfig ~/.gitconfig")
+
+
+@task
+def save_git():
+    """
+    Saves fish shell configuration.
+    """
+    local("cp ~/.gitconfig git/gitconfig")
+
+
+@task
 def deploy_all():
     deploy_fish()
+    deploy_git()
 
 
 @task
 def save_all():
     save_fish()
+    save_git()
