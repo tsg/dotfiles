@@ -18,7 +18,7 @@ function __fish_hg_prompt --description 'Prompt function for Mercurial'
 	set -q -g __fish_has_hg_prompt ; or return
 
 	set -q -g __fish_hg_prompt_color; and set_color $__fish_hg_prompt_color
-	hg prompt " {bookmark}" 2> /dev/null
+		hg prompt " {branch}{ ({bookmark})}" 2> /dev/null
 
 	set -q -g __fish_hg_prompt_color_status; and set_color $__fish_hg_prompt_color_status
 	hg prompt "{status}{outgoing}" 2> /dev/null
