@@ -1,0 +1,8 @@
+[
+    {"name": "command-t", "git": "git://git.wincent.com/command-t.git"},
+    {"name": "LustyJuggler", "git": "https://github.com/vim-scripts/LustyJuggler.git"},
+    {"name": "fish-syntax", "git": "https://github.com/vim-scripts/fish-syntax.git"},
+    {"name": "syntastic", "git": "https://github.com/scrooloose/syntastic.git"},
+    {"name": "vim-toml", "git": "https://github.com/cespare/vim-toml.git"},
+    {"name": "vim-markdown", "git": "https://github.com/plasticboy/vim-markdown.git"}
+]

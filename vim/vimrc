@@ -1,0 +1,86 @@
+set nocompatible
+syntax on
+"set bg=dark
+set hlsearch
+set spell
+let g:load_doxygen_syntax=1
+set wildmode=longest,list
+set showcmd
+set modeline
+set autoindent
+set smartcase
+set wildignore+=*.o,*.obj,.git,.svn,.pyc
+" enable mouse support
+set mouse=a
+
+colorscheme mustang
+
+" less instrusive spell errors
+hi clear SpellBad
+hi SpellBad cterm=underline
+
+let mapleader=","
+
+" key bindings
+map -	t_
+"map g	/[A-Z]<return>
+nmap <silent> ,/ :nohlsearch<CR>
+map <leader>j :LustyJuggler<CR>
+
+" tags
+set tags=tags,./tags,./../tags,./../../tags,~/libiptego/tags
+
+autocmd BufRead *.rst set tabstop=4 softtabstop=4 textwidth=79 noexpandtab
+autocmd BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd BufRead *.[ch] set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+autocmd BufRead *.markdown set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
+autocmd BufRead *.md set tabstop=8 shiftwidth=8 softtabstop=8 textwidth=79 expandtab
+autocmd BufRead *.wiki set syntax=creole tabstop=4 textwidth=79 expandtab
+autocmd BufRead *.html set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+autocmd BufRead *.fish set tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
+autocmd BufRead *.less set syntax=css
+
+" :w!! for sudo and write
+cmap w!! w !sudo tee % >/dev/null
+
+" visible chars
+" set listchars=tab:▸\ ,eol:¬
+
+
+" highlight unwanted white space
+autocmd BufWinEnter * highlight ExtraWhitespace guibg=#444444
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+map <leader>w :match ExtraWhitespace /\s\+$/<CR>
+
+
+"set list
+set listchars=tab:>\ ,trail:.,extends:#,nbsp:.
+hi SpecialKey cterm=NONE ctermfg=NONE gui=NONE guifg=#555555
+
+" LustyJuggler options
+let g:LustyJugglerSuppressRubyWarning = 1
+let g:LustyJugglerShowKeys = 1
+
+" Command-T options
+set wildignore=*.o,*.so,*.pyo,*.pyc,paas/**,cc2/**
+let g:CommandTMaxHeight=15
+
+" compile in the VM
+set makeprg=sshmake
+
+" hide the menu bar in MacVIM
+if has("gui_running")
+	set guioptions=egmrt
+endif
+
+" Enable pathogen
+call pathogen#infect()
+
+" syntastic options
+let g:syntastic_python_checker = "flake8"
+let g:syntastic_python_flake8_args = "--ignore=E121,E501,E128,E122,E123,E124"
+
