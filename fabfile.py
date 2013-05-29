@@ -81,10 +81,27 @@ def install_pathogen_plugins():
 
 
 @task
+def deploy_iterm():
+    """
+    Deploys the iTerm2 settings file.
+    """
+    local("cp iterm/com.googlecode.iterm2.plist ~/Library/Preferences/")
+
+
+@task
+def save_iterm():
+    """
+    Deploys the iTerm2 settings file.
+    """
+    local("cp ~/Library/Preferences/com.googlecode.iterm2.plist iterm/")
+
+
+@task
 def deploy_all():
     deploy_fish()
     deploy_git()
     deploy_vim()
+    deploy_iterm()
 
 
 @task
@@ -92,3 +109,4 @@ def save_all():
     save_fish()
     save_git()
     save_vim()
+    save_iterm()
