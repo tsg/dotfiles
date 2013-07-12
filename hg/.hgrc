@@ -1,0 +1,22 @@
+[ui]
+username = Tudor Golubenco <tudor.golubenco@iptego.com>
+verbose = True
+ssh = ssh -C
+merge = internal:merge
+
+[extensions]
+color =
+pager =
+prompt = ~/sw/hg-prompt/prompt.py
+xgraft = ~/sw/xgraft/xgraft.py
+transplant =
+shelve = ~/sw/hgshelve/hgshelve.py
+rebase =
+bookmarks =
+graphlog =
+mq =
+churn =
+
+[pager]
+pager = LESS='FSRX' less
+attend = log graphlog diff
