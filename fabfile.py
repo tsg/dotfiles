@@ -142,6 +142,15 @@ def deploy_iterm():
 
 
 @task
+def deploy_wheezy_basics():
+    """
+    Install the basic needed packages on a vanilla wheezy.
+    """
+    pkgs = ["vim", "git", "mercurial", "curl"]
+    sudo("aptitude install {}".format(" ".join(pkgs)))
+
+
+@task
 def save_iterm():
     """
     Deploys the iTerm2 settings file.
