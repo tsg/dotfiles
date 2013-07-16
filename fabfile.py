@@ -30,9 +30,8 @@ def deploy_fish_config():
     """
     Deploys fish shell configuration.
     """
-    put("fish/config.fish", "/tmp/config.fish")
     run("mkdir -p ~/.config/fish")
-    run("cp /tmp/config.fish ~/.config/fish/")
+    put("fish/config.fish", "~/.config/config.fish")
 
 
 @task
