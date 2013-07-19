@@ -105,6 +105,17 @@ def deploy_hg():
 
 
 @task
+def compile_command_t():
+    """
+    Compiles the command-t C extension. Needs to be executed after
+    the plugin is executed and needs vim-nox and ruby*-dev packages.
+    """
+    with cd("~/.vim/bundle/command-t/ruby/command-t"):
+        run("ruby extconf.rb")
+        run("make")
+
+
+@task
 def install_pathogen_plugins():
     """
     Downloads and installs the Pathogen modules as listed in
@@ -131,6 +142,8 @@ def install_pathogen_plugins():
 
         print("Plugin {0} installed".format(plugin["name"]))
 
+    compile_command_t()
+
 
 @task
 def deploy_iterm():
@@ -145,7 +158,13 @@ def deploy_wheezy_basics():
     """
     Install the basic needed packages on a vanilla wheezy.
     """
-    pkgs = ["vim", "vim-nox", "git", "mercurial", "curl"]
+    pkgs = ["vim",
+            "vim-nox",  # for vim's command-t
+            "ruby1.9.1-dev",  # for vim's command-t
+            "git",
+            "mercurial",
+            "curl",
+            ]
     sudo("aptitude install {}".format(" ".join(pkgs)))
 
 
