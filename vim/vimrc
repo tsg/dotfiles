@@ -84,3 +84,13 @@ call pathogen#infect()
 let g:syntastic_python_checker = "flake8"
 let g:syntastic_python_flake8_args = "--ignore=E121,E501,E128,E122,E123,E124"
 
+" notify me when files are changed by someone else on disk
+if !has("gui_running")
+	autocmd CursorHold * call Timer()
+	function! Timer()
+		call feedkeys("f\e")
+		checktime
+	endfunction
+	set updatetime=5000  " milliseconds
+	autocmd FileChangedShell * echo "WARNING: File changed on disk, type :e to reload."
+endif
