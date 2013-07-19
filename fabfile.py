@@ -145,7 +145,7 @@ def deploy_wheezy_basics():
     """
     Install the basic needed packages on a vanilla wheezy.
     """
-    pkgs = ["vim", "git", "mercurial", "curl"]
+    pkgs = ["vim", "vim-nox", "git", "mercurial", "curl"]
     sudo("aptitude install {}".format(" ".join(pkgs)))
 
 
