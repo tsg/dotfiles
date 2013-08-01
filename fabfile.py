@@ -164,6 +164,7 @@ def deploy_wheezy_basics():
             "git",
             "mercurial",
             "curl",
+            "ack-grep",
             ]
     sudo("aptitude install {}".format(" ".join(pkgs)))
 
