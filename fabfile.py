@@ -91,15 +91,20 @@ def deploy_hg():
     """
     Deploys the HG configuration files, including the extensions.
     """
-    sudo("aptitude install mercurial")
     extensions = [
         "https://bitbucket.org/sjl/hg-prompt",
         "https://bitbucket.org/rfv/xgraft",
         "https://bitbucket.org/astiob/hgshelve",
+        "https://bitbucket.org/Mekk/mercurial_keyring",
     ]
     run("mkdir -p ~/sw")
     with cd("~/sw"):
         for url in extensions:
+            name = url[url.rfind("/")+1:]
+            print("Extracted name: {}".format(name))
+            if files.exists("~/sw/{}".format(name)):
+                print("HG extension {} already installed.".format(name))
+                continue
             run("hg clone {}".format(url))
     put("hg/.hgrc", "~/.hgrc")
 
