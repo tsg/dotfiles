@@ -108,6 +108,13 @@ def deploy_hg():
             run("hg clone {}".format(url))
     put("hg/.hgrc", "~/.hgrc")
 
+@task
+def save_hg_config():
+    """
+    Saves .hgrc
+    """
+    get("~/.hgrc", "hg/.hgrc")
+
 
 @task
 def compile_command_t():
