@@ -1,5 +1,5 @@
 [ui]
-username = Tudor Golubenco <tudor.golubenco@iptego.com>
+username = Tudor Golubenco <tudor.g@gmail.com>
 verbose = True
 ssh = ssh -C
 merge = internal:merge
@@ -16,6 +16,7 @@ bookmarks =
 graphlog =
 mq =
 churn =
+mercurial_keyring = ~/sw/mercurial_keyring/mercurial_keyring.py
 
 [pager]
 pager = LESS='FSRX' less
