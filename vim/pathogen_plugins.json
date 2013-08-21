@@ -1,5 +1,5 @@
 [
-    {"name": "command-t", "git": "git://git.wincent.com/command-t.git"},
+    {"name": "Command-T", "git": "https://github.com/wincent/Command-T.git"},
     {"name": "LustyJuggler", "git": "https://github.com/vim-scripts/LustyJuggler.git"},
     {"name": "fish-syntax", "git": "https://github.com/vim-scripts/fish-syntax.git"},
     {"name": "syntastic", "git": "https://github.com/scrooloose/syntastic.git"},
