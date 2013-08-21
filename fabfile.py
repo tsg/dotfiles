@@ -100,13 +100,14 @@ def deploy_hg():
     run("mkdir -p ~/sw")
     with cd("~/sw"):
         for url in extensions:
-            name = url[url.rfind("/")+1:]
+            name = url[url.rfind("/") + 1:]
             print("Extracted name: {}".format(name))
             if files.exists("~/sw/{}".format(name)):
                 print("HG extension {} already installed.".format(name))
                 continue
             run("hg clone {}".format(url))
     put("hg/.hgrc", "~/.hgrc")
+
 
 @task
 def save_hg_config():
@@ -155,6 +156,9 @@ def install_pathogen_plugins():
         print("Plugin {0} installed".format(plugin["name"]))
 
     compile_command_t()
+
+    # syntastic needs flake8
+    sudo("pip install flake8")
 
 
 @task
