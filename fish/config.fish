@@ -111,3 +111,7 @@ function fish_prompt --description 'Write out the prompt'
   echo -n -s "$__fish_prompt_cwd" (prompt_pwd) (__fish_git_prompt) (__fish_hg_prompt) (__fish_virtualenv_prompt) "$__fish_prompt_normal" "$prompt_status" "$delim" ' '
 
 end
+
+function restart_audio_server --description "Restart the OSX audio server to fix Airplay"
+	sudo kill (ps -ax | grep 'coreaudiod' | grep 'sbin' | awk '{print $1}')
+end
