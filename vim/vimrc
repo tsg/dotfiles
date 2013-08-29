@@ -13,11 +13,11 @@ set wildignore+=*.o,*.obj,.git,.svn,.pyc
 " enable mouse support
 set mouse=a
 
-colorscheme mustang
-
-" less instrusive spell errors
+" less intrusive spell errors
 hi clear SpellBad
 hi SpellBad cterm=underline
+
+colorscheme mustang
 
 let mapleader=","
 
