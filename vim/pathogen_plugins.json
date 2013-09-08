@@ -9,5 +9,6 @@
     {"name": "vim-golang", "git": "https://github.com/jnwhiteh/vim-golang"},
     {"name": "puppet-syntax-vim", "git": "https://github.com/puppetlabs/puppet-syntax-vim"},
     {"name": "vim-fish", "git": "https://github.com/aliva/vim-fish"},
-    {"name": "vim-jinja2-syntax", "git": "https://github.com/Glench/Vim-Jinja2-Syntax"}
+    {"name": "vim-jinja2-syntax", "git": "https://github.com/Glench/Vim-Jinja2-Syntax"},
+	{"name": "vim-less", "git": "https://github.com/groenewege/vim-less"}
 ]
