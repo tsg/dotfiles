@@ -35,12 +35,27 @@ def deploy_fish_config():
 
 
 @task
+def save_ack_config():
+    """
+    Saves fish shell configuration.
+    """
+    get("~/.ackrc", "ack/ackrc")
+
+
+@task
+def deploy_ack_config():
+    """
+    Deploys fish shell configuration.
+    """
+    put("ack/ackrc", ".ackrc")
+
+
+@task
 def save_fish_config():
     """
     Saves fish shell configuration.
     """
     get("~/.config/fish/config.fish", "fish/")
-
 
 @task
 def deploy_git():

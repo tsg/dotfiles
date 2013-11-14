@@ -1,0 +1,2 @@
+--ignore-file=match:/-all\.js$/
+--ignore-file=match:/-debug\.js$/
