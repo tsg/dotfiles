@@ -11,6 +11,7 @@ prompt = ~/sw/hg-prompt/prompt.py
 xgraft = ~/sw/xgraft/xgraft.py
 transplant =
 shelve = ~/sw/hgshelve/hgshelve.py
+contains = ~/sw/hg-contains/contains.py
 rebase =
 bookmarks =
 graphlog =
