@@ -57,6 +57,7 @@ def save_fish_config():
     """
     get("~/.config/fish/config.fish", "fish/")
 
+
 @task
 def deploy_git():
     """
@@ -111,6 +112,7 @@ def deploy_hg():
         "https://bitbucket.org/rfv/xgraft",
         "https://bitbucket.org/astiob/hgshelve",
         "https://bitbucket.org/Mekk/mercurial_keyring",
+        "https://bitbucket.org/resi/hg-contains",
     ]
     run("mkdir -p ~/sw")
     with cd("~/sw"):
@@ -152,7 +154,9 @@ def install_pathogen_plugins():
     run("mkdir -p ~/.vim/bundle")
     run("mkdir -p ~/.vim/autoload")
     if not files.exists("~/.vim/autoload/pathogen.vim"):
-        run("curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim")
+        run("curl -Sso ~/.vim/autoload/pathogen.vim " +
+            "https://raw.github.com/tpope/vim-pathogen/" +
+            "master/autoload/pathogen.vim")
 
     pathogen_plugins = json.load(open("vim/pathogen_plugins.json"))
     for plugin in pathogen_plugins:
@@ -162,7 +166,8 @@ def install_pathogen_plugins():
             continue
 
         if not "git" in plugin:
-            print("Don't know how to install plugin {0}".format(plugin["name"]))
+            print("Don't know how to install plugin {0}"
+                  .format(plugin["name"]))
             continue
 
         with cd("~/.vim/bundle"):
