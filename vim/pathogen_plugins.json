@@ -10,5 +10,6 @@
     {"name": "puppet-syntax-vim", "git": "https://github.com/puppetlabs/puppet-syntax-vim"},
     {"name": "vim-fish", "git": "https://github.com/aliva/vim-fish"},
     {"name": "vim-jinja2-syntax", "git": "https://github.com/Glench/Vim-Jinja2-Syntax"},
-	{"name": "vim-less", "git": "https://github.com/groenewege/vim-less"}
+    {"name": "vim-less", "git": "https://github.com/groenewege/vim-less"},
+    {"name": "vim-mercenary", "git": "git://github.com/phleet/vim-mercenary.git"}
 ]
