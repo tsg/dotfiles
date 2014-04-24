@@ -13,12 +13,8 @@ set wildignore+=*.o,*.obj,.git,.svn,.pyc
 " enable mouse support
 set mouse=a
 
-" syntastic needs this for golang
-let $GOPATH=$HOME
+" don't let fish cause any issues
 set shell=/bin/bash
-
-" Enable pathogen
-call pathogen#infect()
 
 " less intrusive spell errors
 hi clear SpellBad
@@ -38,15 +34,15 @@ map <leader>j :LustyJuggler<CR>
 set tags=tags,./tags,./../tags,./../../tags,~/libiptego/tags
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd BufRead *.rst set tabstop=4 softtabstop=4 textwidth=79 noexpandtab
+autocmd BufRead *.rst set tabstop=4 softtabstop=4 textwidth=79 expandtab
 autocmd BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-autocmd BufRead *.[ch] set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
-autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+autocmd BufRead *.[ch] set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
+autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd BufRead *.markdown set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
 autocmd BufRead *.md set tabstop=8 shiftwidth=8 softtabstop=8 textwidth=79 expandtab
 autocmd BufRead *.wiki set syntax=creole tabstop=4 textwidth=79 expandtab
-autocmd BufRead *.html set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-autocmd BufRead *.fish set tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
+autocmd BufRead *.html set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd BufRead *.fish set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead *.less set syntax=css
 
 " :w!! for sudo and write
@@ -80,12 +76,16 @@ let g:CommandTMaxHeight=15
 " compile in the VM
 set makeprg=sshmake
 
+" syntastic needs this for golang
+let $GOPATH=$HOME
+
 " hide the menu bar in MacVIM
 if has("gui_running")
 	set guioptions=egmrt
 endif
 
-
+" Enable pathogen
+call pathogen#infect()
 
 " syntastic options
 let g:syntastic_python_checker = "flake8"
