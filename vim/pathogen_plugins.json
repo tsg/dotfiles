@@ -6,10 +6,11 @@
     {"name": "vim-toml", "git": "https://github.com/cespare/vim-toml.git"},
     {"name": "vim-markdown", "git": "https://github.com/plasticboy/vim-markdown.git"},
     {"name": "ack.vim", "git": "https://github.com/mileszs/ack.vim.git"},
-    {"name": "vim-golang", "git": "https://github.com/jnwhiteh/vim-golang"},
+    {"name": "vim-go", "git": "https://github.com/fatih/vim-go.git"},
     {"name": "puppet-syntax-vim", "git": "https://github.com/puppetlabs/puppet-syntax-vim"},
     {"name": "vim-fish", "git": "https://github.com/aliva/vim-fish"},
-    {"name": "vim-jinja2-syntax", "git": "https://github.com/Glench/Vim-Jinja2-Syntax"},
+    {"name": "Vim-Jinja2-Syntax", "git": "https://github.com/Glench/Vim-Jinja2-Syntax"},
     {"name": "vim-less", "git": "https://github.com/groenewege/vim-less"},
-    {"name": "vim-mercenary", "git": "git://github.com/phleet/vim-mercenary.git"}
+    {"name": "vim-mercenary", "git": "git://github.com/phleet/vim-mercenary.git"},
+    {"name": "vim-fugitive", "git": "git@github.com:tpope/vim-fugitive.git"}
 ]
