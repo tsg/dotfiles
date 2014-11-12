@@ -13,6 +13,8 @@ from fabric.api import (
 from fabric.contrib import files
 import json
 
+env.use_ssh_config = True
+
 if not env.hosts:
     # by default do stuff on localhost
     env.hosts = ['localhost']
@@ -154,9 +156,8 @@ def install_pathogen_plugins():
     run("mkdir -p ~/.vim/bundle")
     run("mkdir -p ~/.vim/autoload")
     if not files.exists("~/.vim/autoload/pathogen.vim"):
-        run("curl -Sso ~/.vim/autoload/pathogen.vim " +
-            "https://raw.github.com/tpope/vim-pathogen/" +
-            "master/autoload/pathogen.vim")
+        run("curl -LSso ~/.vim/autoload/pathogen.vim " +
+            "https://tpo.pe/pathogen.vim")
 
     pathogen_plugins = json.load(open("vim/pathogen_plugins.json"))
     for plugin in pathogen_plugins:
@@ -165,7 +166,7 @@ def install_pathogen_plugins():
             print("Plugin {0} already installed".format(plugin["name"]))
             continue
 
-        if not "git" in plugin:
+        if "git" not in plugin:
             print("Don't know how to install plugin {0}"
                   .format(plugin["name"]))
             continue
