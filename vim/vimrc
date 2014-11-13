@@ -20,7 +20,7 @@ set shell=/bin/bash
 hi clear SpellBad
 hi SpellBad cterm=underline
 
-colorscheme Tomorrow-Night
+colorscheme mustang
 
 let mapleader=","
 
