@@ -82,3 +82,12 @@ end
 function restart_audio_server --description "Restart the OSX audio server to fix Airplay"
 	sudo kill (ps -ax | grep 'coreaudiod' | grep 'sbin' | awk '{print $1}')
 end
+
+function pprint_json_logs --description "Pretty prints a file containing one json object per line"
+  set -l i 0
+  cat $argv | while read in
+    echo "line: " $i;
+    underscore -d $in print --color
+    set -l i (math $i + 1)
+  end
+end
