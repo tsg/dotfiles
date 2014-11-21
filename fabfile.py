@@ -22,7 +22,7 @@ if not env.hosts:
 
 @task
 def deploy_fish():
-    run("aptitude install fish")
+    sudo("aptitude -y install fish")
     deploy_fish_config()
     run("chsh -s /usr/bin/fish")
 
@@ -195,6 +195,7 @@ def deploy_wheezy_basics():
     """
     Install the basic needed packages on a vanilla wheezy.
     """
+    sudo("aptitude update")
     pkgs = ["vim",
             "vim-nox",  # for vim's command-t
             "ruby1.9.1-dev",  # for vim's command-t
@@ -203,7 +204,7 @@ def deploy_wheezy_basics():
             "curl",
             "ack-grep",
             ]
-    sudo("aptitude install {}".format(" ".join(pkgs)))
+    sudo("aptitude -y install {}".format(" ".join(pkgs)))
 
 
 @task
@@ -215,11 +216,20 @@ def save_iterm():
 
 
 @task
-def deploy_all():
+def deploy_all_mac():
     deploy_fish()
     deploy_git()
     deploy_vim()
     deploy_iterm()
+
+
+@task
+def deploy_all_wheezy():
+    deploy_wheezy_basics()
+    deploy_git()
+    deploy_hg()
+    deploy_vim()
+    deploy_fish()
 
 
 @task
