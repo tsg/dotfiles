@@ -1,2 +1,9 @@
+--ignore-dir=bower_components
+--ignore-dir=node_modules
+
+# "concat" js files
 --ignore-file=match:/-all\.js$/
 --ignore-file=match:/-debug\.js$/
+
+# vi/vim swap files
+--ignore-file=match:/[._].*\.swp$/

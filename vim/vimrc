@@ -41,7 +41,7 @@ autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufRead *.markdown set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
 autocmd BufRead *.md set tabstop=8 shiftwidth=8 softtabstop=8 textwidth=79 expandtab
 autocmd BufRead *.wiki set syntax=creole tabstop=4 textwidth=79 expandtab
-autocmd BufRead *.html set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd BufRead *.html set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead *.fish set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead *.js set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead *.json set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
