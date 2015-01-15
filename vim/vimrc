@@ -82,6 +82,12 @@ set makeprg=sshmake
 " syntastic needs this for golang
 let $GOPATH=$HOME
 
+" make go tools reachable
+let $PATH.=':'.$GOPATH.'/bin'
+
+" vim-go options
+let g:go_fmt_command = "goimports"
+
 " hide the menu bar in MacVIM
 if has("gui_running")
 	set guioptions=egmrt

@@ -15,5 +15,6 @@
     {"name": "vim-fugitive", "git": "https://github.com/tpope/vim-fugitive.git"},
     {"name": "vim-colors-solarized", "git": "git://github.com/altercation/vim-colors-solarized.git"},
     {"name": "mustang-vim", "git": "https://github.com/croaker/mustang-vim.git"},
-    {"name": "vim-indent-guides", "git": "git://github.com/nathanaelkane/vim-indent-guides.git"}
+    {"name": "vim-indent-guides", "git": "git://github.com/nathanaelkane/vim-indent-guides.git"},
+    {"name": "vim-json", "git": "https://github.com/elzr/vim-json"}
 ]
