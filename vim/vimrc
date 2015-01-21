@@ -33,7 +33,7 @@ map <leader>j :LustyJuggler<CR>
 " tags
 set tags=tags,./tags,./../tags,./../../tags,~/libiptego/tags
 
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab textwidth=120
 autocmd BufRead *.rst set tabstop=4 softtabstop=4 textwidth=79 expandtab
 autocmd BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd BufRead *.[ch] set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
@@ -80,7 +80,7 @@ let g:CommandTMaxHeight=15
 set makeprg=sshmake
 
 " syntastic needs this for golang
-let $GOPATH=$HOME
+let $GOPATH=$HOME.':'.$HOME.'/src/bonito/'
 
 " make go tools reachable
 let $PATH.=':'.$GOPATH.'/bin'
