@@ -73,7 +73,7 @@ let g:LustyJugglerSuppressRubyWarning = 1
 let g:LustyJugglerShowKeys = 1
 
 " Command-T options
-set wildignore=*.o,*.so,*.pyo,*.pyc,*.swp,*.a,**/node_modules/*,**/bower_components/*,**/env/*
+set wildignore=*.o,*.so,*.pyo,*.pyc,*.swp,*.a,**/node_modules/*,**/bower_components/*,**/env/*,**/tests/run/*
 let g:CommandTMaxHeight=15
 
 " compile in the VM
