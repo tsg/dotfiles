@@ -26,9 +26,6 @@ let mapleader=","
 
 " key bindings
 map -	t_
-"map g	/[A-Z]<return>
-nmap <silent> ,/ :nohlsearch<CR>
-map <leader>j :LustyJuggler<CR>
 
 " tags
 set tags=tags,./tags,./../tags,./../../tags,~/libiptego/tags
@@ -38,6 +35,7 @@ autocmd BufRead *.rst set tabstop=4 softtabstop=4 textwidth=79 expandtab
 autocmd BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd BufRead *.[ch] set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
 autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+autocmd BufRead Makefile set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 autocmd BufRead *.markdown set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
 autocmd BufRead *.md set tabstop=8 shiftwidth=8 softtabstop=8 textwidth=79 expandtab
 autocmd BufRead *.wiki set syntax=creole tabstop=4 textwidth=79 expandtab
@@ -68,12 +66,8 @@ map <leader>w :match ExtraWhitespace /\s\+$/<CR>
 set listchars=tab:>\ ,trail:.,extends:#,nbsp:.
 hi SpecialKey cterm=NONE ctermfg=NONE gui=NONE guifg=#555555
 
-" LustyJuggler options
-let g:LustyJugglerSuppressRubyWarning = 1
-let g:LustyJugglerShowKeys = 1
-
 " Command-T options
-set wildignore=*.o,*.so,*.pyo,*.pyc,*.swp,*.a,**/node_modules/*,**/bower_components/*,**/env/*,**/tests/run/*
+set wildignore=*.o,*.so,*.pyo,*.pyc,*.swp,*.a,**/node_modules/*,**/bower_components/*,**/env/*,tests/run/*,Godeps/*
 let g:CommandTMaxHeight=15
 
 " compile in the VM
