@@ -16,11 +16,14 @@ set mouse=a
 " don't let fish cause any issues
 set shell=/bin/bash
 
-" less intrusive spell errors
-hi clear SpellBad
-hi SpellBad cterm=underline
 
 colorscheme mustang
+
+" less intrusive spell errors in terminal
+if !has('gui_running')
+    hi clear SpellBad
+    hi SpellBad cterm=underline
+endif
 
 let mapleader=","
 
