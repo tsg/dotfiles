@@ -22,13 +22,16 @@ colorscheme mustang
 " less intrusive spell errors in terminal
 if !has('gui_running')
     hi clear SpellBad
-    hi SpellBad cterm=underline
+    hi SpellBad cterm=undercurl
 endif
 
 let mapleader=","
 
 " key bindings
 map -	t_
+
+" clear search highlighting
+map <leader>c :nohl<CR>
 
 " tags
 set tags=tags,./tags,./../tags,./../../tags,~/libiptego/tags
