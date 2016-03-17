@@ -5,7 +5,7 @@
     {"name": "syntastic", "git": "https://github.com/scrooloose/syntastic.git"},
     {"name": "vim-toml", "git": "https://github.com/cespare/vim-toml.git"},
     {"name": "vim-markdown", "git": "https://github.com/plasticboy/vim-markdown.git"},
-    {"name": "ack.vim", "git": "https://github.com/mileszs/ack.vim.git"},
+    {"name": "ag.vim", "git": "https://github.com/rking/ag.vim.git"},
     {"name": "vim-go", "git": "https://github.com/fatih/vim-go.git"},
     {"name": "puppet-syntax-vim", "git": "https://github.com/puppetlabs/puppet-syntax-vim"},
     {"name": "vim-fish", "git": "https://github.com/aliva/vim-fish"},

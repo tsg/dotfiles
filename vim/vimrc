@@ -36,11 +36,11 @@ map <leader>c :nohl<CR>
 " tags
 set tags=tags,./tags,./../tags,./../../tags,~/libiptego/tags
 
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab textwidth=120
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab textwidth=0
 autocmd BufRead *.rst set tabstop=4 softtabstop=4 textwidth=79 expandtab
 autocmd BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd BufRead *.[ch] set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
-autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+autocmd BufRead *.go set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab textwidth=200
 autocmd BufRead Makefile set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 autocmd BufRead *.markdown set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
 autocmd BufRead *.md set tabstop=8 shiftwidth=8 softtabstop=8 textwidth=79 expandtab
@@ -113,3 +113,5 @@ if !has("gui_running")
 	autocmd FileChangedShell * echo "WARNING: File changed on disk, type :e to reload."
 endif
 
+" switch Ack to ag
+let g:ackprg = 'ag --vimgrep'
