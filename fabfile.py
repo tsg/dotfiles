@@ -21,19 +21,11 @@ if not env.hosts:
 
 
 @task
-def deploy_fish():
-    sudo("aptitude -y install fish")
-    deploy_fish_config()
-    run("chsh -s /usr/bin/fish")
-
-
-@task
-def deploy_fish_config():
+def deploy_zsh_config():
     """
     Deploys fish shell configuration.
     """
-    run("mkdir -p ~/.config/fish")
-    put("fish/config.fish", "~/.config/fish/config.fish")
+    put("zsh/zshrc", "~/.zshrc")
 
 
 @task
