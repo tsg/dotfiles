@@ -88,6 +88,7 @@ let $PATH.=':'.$HOME.'/bin'
 
 " vim-go options
 let g:go_fmt_command = "goimports"
+let g:go_fmt_options = "-local=github.com/elastic"
 let g:go_async_run = 1
 
 " hide the menu bar in MacVIM
